@@ -1,6 +1,6 @@
 # DL model training
 
-Supervised learning framework for training PyTorch models using hydra configuration files and
+Supervised learning framework for training PyTorch models using Hydra configuration management and
 wandb for tracking and performing hyperparameter tuning. Currently supports training feedfoward neural
 network models for classification and regression tasks on torchvision and sklearn datasets.
 
