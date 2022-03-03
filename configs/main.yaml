@@ -1,0 +1,10 @@
+defaults:
+  - wandb: default
+  - model: mlp
+  - optimiser: sgd
+
+device: "cpu"
+seed: 1
+
+batch_size: 64
+epochs: 10

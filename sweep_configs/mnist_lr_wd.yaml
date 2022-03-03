@@ -1,0 +1,33 @@
+program: main.py
+project: hydra-example
+method: bayes
+name: bayes_lr_wdecay_layers
+metric:
+  goal: maximize
+  name: metrics/test_accuracy
+
+parameters:
+
+  optimiser.params.lr:
+    min: -7
+    max: -6
+    distribution: log_uniform
+
+  optimiser.params.weight_decay:
+    min: -10
+    max: -7
+    distribution: log_uniform
+
+early_terminate:
+  type: hyperband
+  eta: 3
+  min_iter: 2
+
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args_no_hyphens}
+  - +dataset=mnist
+  - epochs=5
+  - optimiser=adam

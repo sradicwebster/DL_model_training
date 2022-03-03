@@ -1,0 +1,7 @@
+input_dim: ???
+output_dim: ???
+hidden_layer_sizes: [100, 100]
+activation: ReLU
+squash_output: False
+softmax_output: True
+loss_fn: CrossEntropyLoss

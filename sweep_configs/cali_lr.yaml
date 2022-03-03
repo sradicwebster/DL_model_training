@@ -1,0 +1,34 @@
+program: main.py
+project: hydra-example
+method: bayes
+name: cali_bayes_lr
+metric:
+  goal: minimize
+  name: metrics/test_loss
+
+parameters:
+
+  optimiser.params.lr:
+    min: -8
+    max: -5
+    distribution: log_uniform
+
+  optimiser.params.weight_decay:
+    min: -10
+    max: -7
+    distribution: log_uniform
+
+early_terminate:
+  type: hyperband
+  eta: 3
+  min_iter: 2
+
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args_no_hyphens}
+  - +dataset=california_housing
+  - optimiser=adam
+  - model.loss_fn=MSELoss
+  - model.softmax_output=False

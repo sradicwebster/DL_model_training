@@ -1,0 +1,4 @@
+name: california_housing
+location: "sklearn_fetch"
+task: "regression"
+test_frac: 0.2

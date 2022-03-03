@@ -1,0 +1,3 @@
+name: MNIST
+location: "pytorch"
+task: "classification"

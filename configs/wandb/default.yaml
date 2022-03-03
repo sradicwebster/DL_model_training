@@ -1,0 +1,6 @@
+init:
+    project: hydra-example
+    dir: ???
+watch:
+    log: all
+    log_freq: 100
